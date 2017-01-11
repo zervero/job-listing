@@ -8,6 +8,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @resumes = @job.resumes;
   end
 
   def new
@@ -48,7 +49,7 @@ class Admin::JobsController < ApplicationController
   def hide
     @job = Job.find(params[:id])
     @job.hide!
-    
+
     redirect_to :back
   end
 

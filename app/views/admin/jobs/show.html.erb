@@ -6,20 +6,24 @@
 			<% end %>
 		</span>
 	</div>
+		<h2>职缺:<%= @job.title %></h2>
+		<h2>职缺描述:<%= @job.description %></h2>
 	<table class="table">
     <thead>
       <tr>
-        <th>职缺</th>
-        <th>职缺描述</th>
-        <th>发表时间</th>
+        <th>履历内容</th>
+        <th>履历附件</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
+			<% @resumes.each do |resume| %>
         <tr>
-          <td><%= @job.title %></td>
-          <td><%= @job.description %></td>
-          <td><%= @job.created_at %></td>
+          <td><%= resume.content %></td>
+          <td><%= resume.attachment %></td>
+          <td><%= link_to("下载", "#")%></td>
         </tr>
+			<% end %>
     </tbody>
   </table>
 </div>
