@@ -7,7 +7,7 @@ class JobsController < ApplicationController
     when 'by_upper_bound'
       Job.published.order('wage_upper_bound DESC')
     else
-      Job.published.render
+      Job.published.recent
     end
 
   end
